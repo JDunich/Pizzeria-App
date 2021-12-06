@@ -29,8 +29,11 @@ public class PizzaActivity extends AppCompatActivity implements View.OnClickList
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        System.out.println("here");
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pizza);
+        extraToppings = findViewById(R.id.extraToppings);
+        currentToppings = findViewById(R.id.currentToppings);
         pep_bt = findViewById(R.id.pep_bt);
         haw_bt = findViewById(R.id.haw_bt);
         del_bt = findViewById(R.id.del_bt);
@@ -38,11 +41,11 @@ public class PizzaActivity extends AppCompatActivity implements View.OnClickList
         medium = findViewById(R.id.medium);
         large = findViewById(R.id.large);
         add = findViewById(R.id.add);
+        next = findViewById(R.id.next);
         extra = new ArrayAdapter<Topping>(
                 this,
                 android.R.layout.simple_list_item_1, Arrays.asList(Topping.values())
         );
-        toppingListener();
         add.setOnClickListener(v -> {
                 addPizza();
         });
@@ -52,11 +55,15 @@ public class PizzaActivity extends AppCompatActivity implements View.OnClickList
                 openCust();
             }
         });
+        extraToppings.setAdapter(null);
+        currentToppings.setAdapter(null);
+        toppingListener();
     }
 
     @SuppressLint("NonConstantResourceId")
     @Override
     public void onClick(View view) {
+        System.out.println("here");
         switch (view.getId()){
             case R.id.pep_bt:
                 type = PizzaMaker.createPizza("Pepperoni");
@@ -122,29 +129,41 @@ public class PizzaActivity extends AppCompatActivity implements View.OnClickList
     }
 
     private void setToppings(String flavor){
-        current.clear();
-        extra = new ArrayAdapter<Topping>(
-                this,
-                android.R.layout.simple_list_item_1, Arrays.asList(Topping.values())
-        );
+        ArrayList<Topping> tempextra = new ArrayList<>(Arrays.asList(Topping.values()));
+        ArrayList<Topping> tempcurrent = new ArrayList<>();
+
         switch(flavor){
             case "pep":
-                extra.remove(Topping.Pepperoni);
-                current.add(Topping.Pepperoni);
+                tempextra.remove(Topping.Pepperoni);
+                tempcurrent.add(Topping.Pepperoni);
                 break;
             case "haw":
-                extra.remove(Topping.Ham);
-                extra.remove(Topping.Pineapple);
-                current.addAll(Topping.Ham, Topping.Pineapple);
+                tempextra.remove(Topping.Ham);
+                tempextra.remove(Topping.Pineapple);
+                tempcurrent.add(Topping.Ham);
+                tempcurrent.add(Topping.Pineapple);
                 break;
             case "del":
-                extra.remove(Topping.Pepperoni);
-                extra.remove(Topping.Olives);
-                extra.remove(Topping.Bacon);
-                extra.remove(Topping.Peppers);
-                extra.remove(Topping.Chicken);
-                current.addAll(Topping.Pepperoni, Topping.Olives, Topping.Bacon, Topping.Peppers, Topping.Chicken);
+                tempextra.remove(Topping.Pepperoni);
+                tempextra.remove(Topping.Olives);
+                tempextra.remove(Topping.Bacon);
+                tempextra.remove(Topping.Peppers);
+                tempextra.remove(Topping.Chicken);
+                tempcurrent.add(Topping.Pepperoni);
+                tempcurrent.add(Topping.Olives);
+                tempcurrent.add(Topping.Bacon);
+                tempcurrent.add(Topping.Peppers);
+                tempcurrent.add(Topping.Chicken);
         }
+
+        extra = new ArrayAdapter<Topping>(
+                this,
+                android.R.layout.simple_list_item_1, tempextra
+        );
+        current = new ArrayAdapter<Topping>(
+                this,
+                android.R.layout.simple_list_item_1, tempcurrent
+        );
         extraToppings.setAdapter(extra);
         currentToppings.setAdapter(current);
     }

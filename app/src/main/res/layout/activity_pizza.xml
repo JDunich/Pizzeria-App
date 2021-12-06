@@ -16,9 +16,8 @@
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.076"
-            tools:text="@string/pick" app:layout_constraintHorizontal_bias="0.495"/>
-
+            app:layout_constraintVertical_bias="0.024"
+            tools:text="@string/pick"/>
     <Button
             android:id="@+id/pep_bt"
             android:layout_width="118dp"
@@ -27,7 +26,8 @@
             android:text="@string/pepperoni"
             app:layout_constraintStart_toStartOf="@+id/Title2"
             app:layout_constraintTop_toBottomOf="@+id/Title2"
-            tools:text="@string/pepperoni" android:layout_marginLeft="4dp" android:layout_marginStart="4dp"/>
+            tools:text="@string/pepperoni" android:layout_marginLeft="4dp" android:layout_marginStart="4dp"
+            android:onClick="onClick"/>
     <Button
             android:id="@+id/haw_bt"
             android:layout_width="103dp"
@@ -36,7 +36,8 @@
             app:layout_constraintTop_toBottomOf="@+id/Title2"
             tools:text="@string/hawaiian"
             android:layout_marginTop="52dp" app:layout_constraintStart_toEndOf="@+id/pep_bt"
-            app:layout_constraintEnd_toStartOf="@+id/del_bt" app:layout_constraintHorizontal_bias="0.407"/>
+            app:layout_constraintEnd_toStartOf="@+id/del_bt" app:layout_constraintHorizontal_bias="0.407"
+            android:onClick="onClick"/>
     <Button
             android:id="@+id/del_bt"
             android:layout_width="87dp"
@@ -46,28 +47,30 @@
             app:layout_constraintTop_toBottomOf="@+id/Title2"
             android:layout_marginTop="52dp"
             app:layout_constraintEnd_toEndOf="@+id/Title2" android:layout_marginEnd="8dp"
-            android:layout_marginRight="8dp"/>
+            android:layout_marginRight="8dp" android:onClick="onClick"/>
     <TextView
             android:text="@string/size"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" android:id="@+id/textView"
             app:layout_constraintEnd_toEndOf="@+id/del_bt" app:layout_constraintStart_toStartOf="@+id/pep_bt"
-            app:layout_constraintTop_toBottomOf="@+id/Title2" android:layout_marginTop="180dp"
-            app:autoSizeTextType="none"/>
+            app:layout_constraintTop_toBottomOf="@+id/Title2" android:layout_marginTop="120dp"
+            app:autoSizeTextType="none" app:layout_constraintHorizontal_bias="0.504"/>
     <Button
             android:text="@string/small"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" android:id="@+id/small"
             app:layout_constraintStart_toStartOf="parent" android:layout_marginLeft="32dp"
             android:layout_marginStart="32dp" android:clickable="false"
-            app:layout_constraintTop_toBottomOf="@+id/textView" android:layout_marginTop="24dp"/>
+            app:layout_constraintTop_toBottomOf="@+id/textView" android:layout_marginTop="24dp"
+            android:onClick="onClick"/>
     <Button
             android:text="@string/medium"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" android:id="@+id/medium"
             app:layout_constraintStart_toEndOf="@+id/small" android:layout_marginLeft="44dp"
             android:layout_marginStart="44dp" android:clickable="false"
-            app:layout_constraintTop_toBottomOf="@+id/textView" android:layout_marginTop="24dp"/>
+            app:layout_constraintTop_toBottomOf="@+id/textView" android:layout_marginTop="24dp"
+            android:onClick="onClick"/>
     <Button
             android:text="@string/large"
             android:layout_width="wrap_content"
@@ -75,7 +78,7 @@
             app:layout_constraintStart_toEndOf="@+id/medium" android:layout_marginLeft="4dp"
             android:layout_marginStart="4dp" app:layout_constraintEnd_toEndOf="parent" android:clickable="false"
             app:layout_constraintTop_toBottomOf="@+id/textView" android:layout_marginTop="24dp"
-            app:layout_constraintHorizontal_bias="0.507"/>
+            app:layout_constraintHorizontal_bias="0.507" android:onClick="onClick"/>
     <ListView
             android:layout_width="154dp"
             android:layout_height="195dp"
@@ -93,8 +96,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" android:id="@+id/add"
             app:layout_constraintTop_toBottomOf="@+id/currentToppings"
-            android:layout_marginTop="40dp" app:layout_constraintStart_toStartOf="parent"
-            android:layout_marginLeft="64dp" android:layout_marginStart="64dp"/>
+            android:layout_marginTop="32dp" app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginLeft="56dp" android:layout_marginStart="56dp"/>
     <Button
             android:text="@string/next"
             android:layout_width="wrap_content"
