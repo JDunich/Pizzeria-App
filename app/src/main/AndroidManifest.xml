@@ -15,6 +15,11 @@
             android:parentActivityName=".MainActivity">
         </activity>
         <activity
+            android:name=".CustomizeActivity"
+            android:label="Customize Pizza"
+            android:parentActivityName=".PizzaActivity">
+        </activity>
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
