@@ -29,7 +29,6 @@ public class PizzaActivity extends AppCompatActivity implements View.OnClickList
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        System.out.println("here");
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pizza);
         extraToppings = findViewById(R.id.extraToppings);
@@ -63,7 +62,6 @@ public class PizzaActivity extends AppCompatActivity implements View.OnClickList
     @SuppressLint("NonConstantResourceId")
     @Override
     public void onClick(View view) {
-        System.out.println("here");
         switch (view.getId()){
             case R.id.pep_bt:
                 type = PizzaMaker.createPizza("Pepperoni");
@@ -115,16 +113,18 @@ public class PizzaActivity extends AppCompatActivity implements View.OnClickList
     private void toppingListener(){
         extraToppings.setOnItemClickListener((parent, view, position, id) -> {
             Topping top = (Topping) extraToppings.getItemAtPosition(position);
-            extraToppings.removeViewAt(position);
+            extra.remove((Topping) extraToppings.getItemAtPosition(position));
             current.add(top);
+            extraToppings.setAdapter(extra);
             currentToppings.setAdapter(current);
         });
 
         currentToppings.setOnItemClickListener((parent, view, position, id) -> {
             Topping top = (Topping) currentToppings.getItemAtPosition(position);
-            currentToppings.removeViewAt(position);
+            current.remove((Topping) currentToppings.getItemAtPosition(position));
             extra.add(top);
-            extraToppings.setAdapter(current);
+            currentToppings.setAdapter(current);
+            extraToppings.setAdapter(extra);
         });
     }
 
