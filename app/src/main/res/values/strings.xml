@@ -1,7 +1,16 @@
 <resources>
-    <string name="app_name">Pizzeria-App</string>
+    <string name="app_name">Pizzeria App</string>
     <string name="main_menu">Main Menu</string>
+    <string name="pick">Choose a Pizza</string>
     <string name="order_pizza">Order Pizza</string>
     <string name="view_current">View Current Order</string>
     <string name="view_all">View All Store Orders</string>
+    <string name="pepperoni">Pepperoni</string>
+    <string name="hawaiian">Hawaiian</string>
+    <string name="deluxe">Deluxe</string>
+    <string-array name="Size">
+        <item>Small</item>
+        <item>Medium</item>
+        <item>Large</item>
+    </string-array>
 </resources>
