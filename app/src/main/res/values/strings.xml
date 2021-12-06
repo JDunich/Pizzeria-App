@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Pizzeria-App</string>
+    <string name="main_menu">Main Menu</string>
+    <string name="order_pizza">Order Pizza</string>
+    <string name="view_current">View Current Order</string>
+    <string name="view_all">View All Store Orders</string>
 </resources>
