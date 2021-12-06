@@ -10,6 +10,11 @@
             android:supportsRtl="true"
             android:theme="@style/Theme.PizzeriaApp">
         <activity
+            android:name=".PizzaActivity"
+            android:label="Order Pizza"
+            android:parentActivityName=".MainActivity">
+        </activity>
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
