@@ -8,6 +8,13 @@
     <string name="pepperoni">Pepperoni</string>
     <string name="hawaiian">Hawaiian</string>
     <string name="deluxe">Deluxe</string>
+    <string name="order">Order</string>
+    <string name="name">Name</string>
+    <string name="name">Name</string>
+    <string name="name">Name</string>
+    <string name="name">Name</string>
+    <string name="name">Name</string>
+    <string name="cancel_order">Cancel Order</string>
     <string-array name="Size">
         <item>Small</item>
         <item>Medium</item>
