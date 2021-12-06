@@ -1,4 +1,4 @@
-package application;
+package com.example.pizzeria_app;
 
 /**
  * Enum Class for Toppings

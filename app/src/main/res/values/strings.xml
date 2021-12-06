@@ -2,19 +2,27 @@
     <string name="app_name">Pizzeria App</string>
     <string name="main_menu">Main Menu</string>
     <string name="pick">Choose a Pizza</string>
-    <string name="order_pizza">Order Pizza</string>
     <string name="view_current">View Current Order</string>
     <string name="view_all">View All Store Orders</string>
     <string name="pepperoni">Pepperoni</string>
     <string name="hawaiian">Hawaiian</string>
     <string name="deluxe">Deluxe</string>
     <string name="order">Order</string>
-    <string name="name">Name</string>
-    <string name="name">Name</string>
-    <string name="name">Name</string>
-    <string name="name">Name</string>
-    <string name="name">Name</string>
     <string name="cancel_order">Cancel Order</string>
+    <string name="subtotal">subtotal</string>
+    <string name="tax">tax</string>
+    <string name="total">total</string>
+    <string name="phoneNumber">phoneNumber</string>
+    <string name="orderTotal">orderTotal</string>
+    <string name="order_pizza">Order Pizza</string>
+    <string name="view_all_store_orders">View All Store Orders</string>
+    <string name="view_current_order">View Current Order</string>
+    <string name="size">Size</string>
+    <string name="small">Small</string>
+    <string name="medium">Medium</string>
+    <string name="large">Large</string>
+    <string name="add">Add</string>
+    <string name="next">Next</string>
     <string-array name="Size">
         <item>Small</item>
         <item>Medium</item>

@@ -7,6 +7,7 @@ import android.widget.*;
 import androidx.appcompat.app.AppCompatActivity;
 
 import static com.example.pizzeria_app.MainActivity.storeOrders;
+import static com.example.pizzeria_app.PizzaActivity.arr;
 
 public class CurrentActivity extends AppCompatActivity {
 
