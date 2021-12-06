@@ -11,6 +11,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import static com.example.pizzeria_app.MainActivity.storeOrders;
 import static com.example.pizzeria_app.PizzaActivity.arr;
 
 public class CustomizeActivity extends AppCompatActivity {
@@ -26,23 +27,32 @@ public class CustomizeActivity extends AppCompatActivity {
         phone = findViewById(R.id.phone);
         total_pizza = findViewById(R.id.total_pizza);
         finalize = findViewById(R.id.finalize);
+        phone = findViewById(R.id.phone);
+        total_pizza = findViewById(R.id.total_pizza);
         calcTotal();
         phone.addTextChangedListener(new TextWatcher() {
 
             public void afterTextChanged(Editable s) {
+                System.out.println(s.toString());
                 if (isValidNumber(s.toString())){
-                    finalize.setEnabled(true);
+                    System.out.println("here");
+                    finalize.setClickable(true);
                 }
             }
 
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
 
             public void onTextChanged(CharSequence s, int start, int before, int count) {
-                finalize.setEnabled(isValidNumber(s.toString()));
             }
         });
 
+        finalize.setOnClickListener(v -> {
+            arr.setPhoneNumber(phone.getText().toString());
+            storeOrders.add(arr);
+        });
+
     }
+
 
     private void calcTotal(){
         double price = arr.getPrice();

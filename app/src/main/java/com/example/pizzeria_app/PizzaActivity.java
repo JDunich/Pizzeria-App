@@ -112,11 +112,13 @@ public class PizzaActivity extends AppCompatActivity implements View.OnClickList
 
     private void toppingListener(){
         extraToppings.setOnItemClickListener((parent, view, position, id) -> {
-            Topping top = (Topping) extraToppings.getItemAtPosition(position);
-            extra.remove((Topping) extraToppings.getItemAtPosition(position));
-            current.add(top);
-            extraToppings.setAdapter(extra);
-            currentToppings.setAdapter(current);
+            if(current.getCount() < 7) {
+                Topping top = (Topping) extraToppings.getItemAtPosition(position);
+                extra.remove((Topping) extraToppings.getItemAtPosition(position));
+                current.add(top);
+                extraToppings.setAdapter(extra);
+                currentToppings.setAdapter(current);
+            }
         });
 
         currentToppings.setOnItemClickListener((parent, view, position, id) -> {
@@ -178,12 +180,14 @@ public class PizzaActivity extends AppCompatActivity implements View.OnClickList
         small.setClickable(true);
         medium.setClickable(true);
         large.setClickable(true);
+        add.setClickable(true);
     }
 
     private void setUnClickable(){
         small.setClickable(false);
         medium.setClickable(false);
         large.setClickable(false);
+        add.setClickable(false);
     }
 
 }

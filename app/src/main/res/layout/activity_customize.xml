@@ -21,22 +21,28 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:inputType="textPersonName"
-            android:text="Name"
+            android:text="@string/phone"
             android:ems="10"
-            android:id="@+id/phone" tools:layout_editor_absoluteY="232dp"
-            tools:layout_editor_absoluteX="83dp"/>
+            android:id="@+id/phone"
+            app:layout_constraintTop_toBottomOf="@+id/total_pizza"
+            app:layout_constraintStart_toStartOf="@+id/total_pizza"
+            app:layout_constraintEnd_toEndOf="@+id/total_pizza" android:layout_marginTop="68dp"
+            app:layout_constraintHorizontal_bias="0.0" tools:ignore="TextFields"/>
     <Button
-            android:text="Button"
+            android:text="@string/finalize"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" android:id="@+id/finalize" tools:layout_editor_absoluteY="301dp"
-            tools:layout_editor_absoluteX="144dp" android:clickable="false"/>
+            android:layout_height="wrap_content" android:id="@+id/finalize"
+            app:layout_constraintTop_toBottomOf="@+id/phone" app:layout_constraintStart_toStartOf="@+id/phone"
+            app:layout_constraintEnd_toEndOf="@+id/phone" android:layout_marginTop="88dp"
+            android:clickable="false" android:focusable="true"/>
     <EditText
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:inputType="textPersonName"
-            android:text="Name"
+            android:text="@string/total_pizza"
             android:ems="10"
-            android:id="@+id/total_pizza" tools:layout_editor_absoluteY="113dp"
-            tools:layout_editor_absoluteX="83dp"/>
+            android:id="@+id/total_pizza"
+            app:layout_constraintTop_toTopOf="parent" app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" android:layout_marginTop="116dp"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
