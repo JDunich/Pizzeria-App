@@ -3,7 +3,8 @@
                                                    xmlns:app="http://schemas.android.com/apk/res-auto"
                                                    xmlns:tools="http://schemas.android.com/tools"
                                                    android:layout_width="match_parent"
-                                                   android:layout_height="match_parent">
+                                                   android:layout_height="match_parent"
+                                                   tools:context=".CurrentActivity">
 
     <ListView
             android:layout_width="244dp"
@@ -18,50 +19,71 @@
             app:layout_constraintEnd_toEndOf="@+id/total"
             app:layout_constraintTop_toBottomOf="@+id/total" android:layout_marginTop="32dp"
             app:layout_constraintHorizontal_bias="0.52"/>
+
     <EditText
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:inputType="textPersonName"
-            android:text="@string/subtotal"
-            android:ems="10"
-            android:id="@+id/subtotal"
-            app:layout_constraintTop_toBottomOf="@+id/pizza_list"
-            android:layout_marginTop="24dp" app:layout_constraintStart_toStartOf="@+id/pizza_list"
-            app:layout_constraintEnd_toEndOf="@+id/pizza_list" android:clickable="false"
-            android:autofillHints="subtotal" tools:ignore="LabelFor" android:minHeight="48dp" android:editable="false"
-            app:layout_constraintHorizontal_bias="0.529"/>
+        android:id="@+id/subtotal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:autofillHints="subtotal"
+        android:clickable="false"
+        android:editable="false"
+        android:ems="10"
+        android:inputType="none"
+        android:minHeight="48dp"
+        android:text="@string/subtotal"
+        app:layout_constraintEnd_toEndOf="@+id/pizza_list"
+        app:layout_constraintHorizontal_bias="0.529"
+        app:layout_constraintStart_toStartOf="@+id/pizza_list"
+        app:layout_constraintTop_toBottomOf="@+id/pizza_list"
+        tools:ignore="LabelFor" />
+
     <EditText
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:inputType="textPersonName"
-            android:text="@string/tax"
-            android:ems="10"
-            android:id="@+id/tax"
-            app:layout_constraintStart_toStartOf="@+id/subtotal"
-            app:layout_constraintEnd_toEndOf="@+id/subtotal"
-            app:layout_constraintTop_toBottomOf="@+id/subtotal" android:layout_marginTop="24dp"
-            app:layout_constraintHorizontal_bias="1.0" android:autofillHints="tax" tools:ignore="LabelFor"
-            android:minHeight="48dp" android:editable="false"/>
+        android:id="@+id/tax"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:autofillHints="tax"
+        android:editable="false"
+        android:ems="10"
+        android:inputType="none"
+        android:minHeight="48dp"
+        android:text="@string/tax"
+        app:layout_constraintEnd_toEndOf="@+id/subtotal"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/subtotal"
+        app:layout_constraintTop_toBottomOf="@+id/subtotal"
+        tools:ignore="LabelFor" />
+
     <EditText
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:inputType="textPersonName"
-            android:text="@string/total"
-            android:ems="10"
-            android:id="@+id/total"
-            app:layout_constraintTop_toBottomOf="@+id/tax"
-            app:layout_constraintStart_toStartOf="@+id/tax"
-            app:layout_constraintEnd_toEndOf="@+id/tax" app:layout_constraintHorizontal_bias="1.0"
-            android:layout_marginTop="20dp" android:autofillHints="total" tools:ignore="LabelFor,TouchTargetSizeCheck"
-            android:editable="false"/>
+        android:id="@+id/total"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:autofillHints="total"
+        android:editable="false"
+        android:ems="10"
+        android:inputType="none"
+        android:text="@string/total"
+        app:layout_constraintEnd_toEndOf="@+id/tax"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/tax"
+        app:layout_constraintTop_toBottomOf="@+id/tax"
+        tools:ignore="LabelFor,TouchTargetSizeCheck" />
+
     <EditText
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:inputType="textPersonName"
-            android:text="@string/phoneNumber"
-            android:ems="10"
-            android:id="@+id/phoneNumber"
-            app:layout_constraintBottom_toTopOf="@+id/pizza_list" app:layout_constraintEnd_toEndOf="@+id/pizza_list"
-            app:layout_constraintStart_toStartOf="@+id/pizza_list" android:layout_marginBottom="40dp"
-            android:autofillHints="phoneNumber" tools:ignore="LabelFor,TextFields" android:editable="false"/>
+        android:id="@+id/phoneNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="40dp"
+        android:autofillHints="phoneNumber"
+        android:editable="false"
+        android:ems="10"
+        android:inputType="none"
+        android:minHeight="48dp"
+        android:text="@string/phoneNumber"
+        app:layout_constraintBottom_toTopOf="@+id/pizza_list"
+        app:layout_constraintEnd_toEndOf="@+id/pizza_list"
+        app:layout_constraintStart_toStartOf="@+id/pizza_list"
+        tools:ignore="LabelFor,TextFields" />
 </androidx.constraintlayout.widget.ConstraintLayout>

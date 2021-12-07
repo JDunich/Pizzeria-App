@@ -21,6 +21,8 @@ public class PizzaActivity extends AppCompatActivity implements View.OnClickList
     private Pizza type;
     private Size size;
     private Topping toppings;
+    private boolean size_selected = false;
+    private boolean pizza_type_selected = false;
     ListView currentToppings, extraToppings;
     ArrayAdapter<Topping> current, extra;
     Button pep_bt, haw_bt, del_bt, small, medium, large, add, next;
@@ -40,7 +42,9 @@ public class PizzaActivity extends AppCompatActivity implements View.OnClickList
         medium = findViewById(R.id.medium);
         large = findViewById(R.id.large);
         add = findViewById(R.id.add);
+        add.setEnabled(false);
         next = findViewById(R.id.next);
+        next.setEnabled(false);
         extra = new ArrayAdapter<Topping>(
                 this,
                 android.R.layout.simple_list_item_1, Arrays.asList(Topping.values())
@@ -68,31 +72,42 @@ public class PizzaActivity extends AppCompatActivity implements View.OnClickList
                 setFocus(pep_bt, haw_bt, del_bt);
                 setClickable();
                 setToppings("pep");
+                pizza_type_selected = true;
                 break;
             case R.id.haw_bt:
                 type = PizzaMaker.createPizza("Hawaiian");
                 setFocus(haw_bt, pep_bt, del_bt);
                 setClickable();
                 setToppings("haw");
+                pizza_type_selected = true;
                 break;
             case R.id.del_bt:
                 type = PizzaMaker.createPizza("Deluxe");
                 setFocus(del_bt, haw_bt, pep_bt);
                 setClickable();
                 setToppings("del");
+                pizza_type_selected = true;
                 break;
             case R.id.small:
                 size = Size.Small;
                 setFocus(small, medium, large);
+                size_selected = true;
                 break;
             case R.id.medium:
                 size = Size.Medium;
                 setFocus(medium, small, large);
+                size_selected = true;
                 break;
             case R.id.large:
                 size = Size.Large;
                 setFocus(large, medium, small);
+                size_selected = true;
                 break;
+        }
+
+        if(size_selected && pizza_type_selected){
+            add.setEnabled(true);
+            next.setEnabled(true);
         }
     }
 
