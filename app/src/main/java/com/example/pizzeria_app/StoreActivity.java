@@ -21,6 +21,10 @@ public class StoreActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_store);
+        ordersTable = findViewById(R.id.ordersTable);
+        numbers = findViewById(R.id.numbers);
+        cancel = findViewById(R.id.cancel);
+        orderTotal = findViewById(R.id.orderTotal);
         setTable(storeOrders.getFirstNumber());
         setPhoneNumbers();
         numbers.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
@@ -41,6 +45,7 @@ public class StoreActivity extends AppCompatActivity {
             numbers.setAdapter(numberAdapter);
             ordersTable.setAdapter(null);
             storeOrders.cancel(toCancel);
+            orderTotal.setText("0.00");
         });
 
     }

@@ -16,7 +16,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 public class PizzaActivity extends AppCompatActivity implements View.OnClickListener {
-    static Order arr = new Order();
+    static Order curr;
 
     private Pizza type;
     private Size size;
@@ -30,6 +30,7 @@ public class PizzaActivity extends AppCompatActivity implements View.OnClickList
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pizza);
+        curr = new Order();
         extraToppings = findViewById(R.id.extraToppings);
         currentToppings = findViewById(R.id.currentToppings);
         pep_bt = findViewById(R.id.pep_bt);
@@ -106,7 +107,7 @@ public class PizzaActivity extends AppCompatActivity implements View.OnClickList
             toppings.add(current.getItem(i));
         type.setSize(size);
         type.setToppings(toppings);
-        arr.add(type);
+        curr.add(type);
     }
 
     private void toppingListener(){
@@ -189,8 +190,5 @@ public class PizzaActivity extends AppCompatActivity implements View.OnClickList
         add.setClickable(false);
     }
 
-    public Order getArr(){
-        return arr;
-    }
 
 }

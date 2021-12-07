@@ -11,10 +11,13 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import static com.example.pizzeria_app.MainActivity.curr_bt;
 import static com.example.pizzeria_app.MainActivity.storeOrders;
-import static com.example.pizzeria_app.PizzaActivity.arr;
+import static com.example.pizzeria_app.PizzaActivity.curr;
 
 public class CustomizeActivity extends AppCompatActivity {
+
+    public static Order arr = new Order();
 
     EditText phone, total_pizza;
     Button finalize;
@@ -24,6 +27,7 @@ public class CustomizeActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_customize);
+        arr = curr;
         phone = findViewById(R.id.phone);
         total_pizza = findViewById(R.id.total_pizza);
         finalize = findViewById(R.id.finalize);
@@ -34,9 +38,7 @@ public class CustomizeActivity extends AppCompatActivity {
         phone.addTextChangedListener(new TextWatcher() {
 
             public void afterTextChanged(Editable s) {
-                System.out.println(s.toString());
                 if (isValidNumber(s.toString())){
-                    System.out.println("here");
                     finalize.setEnabled(true);
                 } else {
                     finalize.setEnabled(false);
@@ -51,6 +53,7 @@ public class CustomizeActivity extends AppCompatActivity {
 
         finalize.setOnClickListener(v -> {
             arr.setPhoneNumber(phone.getText().toString());
+            curr_bt.setEnabled(true);
         });
 
     }

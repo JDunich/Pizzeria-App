@@ -7,12 +7,15 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import static com.example.pizzeria_app.CustomizeActivity.arr;
+import static com.example.pizzeria_app.PizzaActivity.curr;
+
 public class MainActivity extends AppCompatActivity {
 
     static StoreOrders storeOrders = new StoreOrders();
+    static Button curr_bt, all_bt;
 
-
-    Button order_bt, curr_bt, all_bt;
+    Button order_bt;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
