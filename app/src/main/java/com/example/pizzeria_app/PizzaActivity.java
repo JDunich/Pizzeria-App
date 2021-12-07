@@ -50,7 +50,7 @@ public class PizzaActivity extends AppCompatActivity implements View.OnClickList
                 android.R.layout.simple_list_item_1, Arrays.asList(Topping.values())
         );
         add.setOnClickListener(v -> {
-                addPizza();
+            addPizza();
         });
         next.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -196,13 +196,6 @@ public class PizzaActivity extends AppCompatActivity implements View.OnClickList
         medium.setClickable(true);
         large.setClickable(true);
         add.setClickable(true);
-    }
-
-    private void setUnClickable(){
-        small.setClickable(false);
-        medium.setClickable(false);
-        large.setClickable(false);
-        add.setClickable(false);
     }
 
 

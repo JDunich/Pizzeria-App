@@ -26,6 +26,16 @@ public class MainActivity extends AppCompatActivity {
         curr_bt = findViewById(R.id.curr_bt);
         all_bt =  findViewById(R.id.all_bt);
 
+        if(curr != null)
+            curr_bt.setEnabled(true);
+        else
+            curr_bt.setEnabled(false);
+
+        if(storeOrders.getOrdersList().isEmpty())
+            all_bt.setEnabled(false);
+        else
+            all_bt.setEnabled(true);
+
         order_bt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
