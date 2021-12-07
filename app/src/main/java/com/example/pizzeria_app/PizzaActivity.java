@@ -16,7 +16,6 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 public class PizzaActivity extends AppCompatActivity implements View.OnClickListener {
-
     static Order arr = new Order();
 
     private Pizza type;
@@ -188,6 +187,10 @@ public class PizzaActivity extends AppCompatActivity implements View.OnClickList
         medium.setClickable(false);
         large.setClickable(false);
         add.setClickable(false);
+    }
+
+    public Order getArr(){
+        return arr;
     }
 
 }

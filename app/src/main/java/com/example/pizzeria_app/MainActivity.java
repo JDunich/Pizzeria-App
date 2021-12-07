@@ -11,6 +11,7 @@ public class MainActivity extends AppCompatActivity {
 
     static StoreOrders storeOrders = new StoreOrders();
 
+
     Button order_bt, curr_bt, all_bt;
 
     @Override
@@ -39,7 +40,8 @@ public class MainActivity extends AppCompatActivity {
         all_bt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                openStore();
+                if(storeOrders.getFirstNumber() != null)
+                    openStore();
             }
         });
     }

@@ -19,13 +19,13 @@ public class CurrentActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_order);
-        setPhoneNumber();
         pizza_list = findViewById(R.id.pizza_list);
         subtotal = findViewById(R.id.subtotal);
         tax = findViewById(R.id.tax);
         total = findViewById(R.id.total);
         phoneNumber = findViewById(R.id.phoneNumber);
         currorder_bt = findViewById(R.id.currorder_bt);
+        setPhoneNumber();
         ArrayAdapter<Pizza> adapter = new ArrayAdapter<Pizza>(
                 this,
                 android.R.layout.simple_list_item_1, arr.getPizzaList()

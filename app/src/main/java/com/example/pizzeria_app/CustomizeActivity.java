@@ -27,6 +27,7 @@ public class CustomizeActivity extends AppCompatActivity {
         phone = findViewById(R.id.phone);
         total_pizza = findViewById(R.id.total_pizza);
         finalize = findViewById(R.id.finalize);
+        finalize.setEnabled(false);
         phone = findViewById(R.id.phone);
         total_pizza = findViewById(R.id.total_pizza);
         calcTotal();
@@ -36,7 +37,9 @@ public class CustomizeActivity extends AppCompatActivity {
                 System.out.println(s.toString());
                 if (isValidNumber(s.toString())){
                     System.out.println("here");
-                    finalize.setClickable(true);
+                    finalize.setEnabled(true);
+                } else {
+                    finalize.setEnabled(false);
                 }
             }
 
@@ -48,7 +51,6 @@ public class CustomizeActivity extends AppCompatActivity {
 
         finalize.setOnClickListener(v -> {
             arr.setPhoneNumber(phone.getText().toString());
-            storeOrders.add(arr);
         });
 
     }
