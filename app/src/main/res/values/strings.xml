@@ -26,6 +26,11 @@
     <string name="phone">Enter Phone Number</string>
     <string name="finalize">Place Order</string>
     <string name="total_pizza">Name</string>
+    <string name="current_top">Current Toppings</string>
+    <string name="extra_top">Extra Toppings</string>
+    <string name="total_money">Total    $</string>
+    <string name="tax_money">Tax    $</string>
+    <string name="subtotal_money">Subtotal    $</string>
     <string-array name="Size">
         <item>Small</item>
         <item>Medium</item>
