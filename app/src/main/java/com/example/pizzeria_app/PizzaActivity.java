@@ -1,33 +1,61 @@
 package com.example.pizzeria_app;
 
 import android.annotation.SuppressLint;
-import android.app.Activity;
 import android.graphics.Color;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-
 import java.util.ArrayList;
 import java.util.Arrays;
 
+
+/**
+ * Pizza Activity
+ * @author Jack Dunich
+ * @author Kiana Perst
+ */
 public class PizzaActivity extends AppCompatActivity implements View.OnClickListener {
+    /**
+     * Order curr
+     */
     static Order curr;
-
+    /**
+     * Pizza type
+     */
     private Pizza type;
+    /**
+     * Pizza size
+     */
     private Size size;
-    private Topping toppings;
+    /**
+     * boolean if size is selected
+     */
     private boolean size_selected = false;
+    /**
+     * boolean if pizza type is selected
+     */
     private boolean pizza_type_selected = false;
-    ListView currentToppings, extraToppings;
-    ArrayAdapter<Topping> current, extra;
-    Button pep_bt, haw_bt, del_bt, small, medium, large, add, next;
+    /**
+     * ListView for current and extra
+     */
+    private ListView currentToppings, extraToppings;
+    /**
+     * Array for current and extra
+     */
+    private ArrayAdapter<Topping> current, extra;
+    /**
+     * Buttons
+     */
+    private Button pep_bt, haw_bt, del_bt, small, medium, large, add, next;
 
-
+    /**
+     * On initialization
+     * @param savedInstanceState savedInstanceState
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -63,6 +91,10 @@ public class PizzaActivity extends AppCompatActivity implements View.OnClickList
         toppingListener();
     }
 
+    /**
+     * OnClick method
+     * @param view view
+     */
     @SuppressLint("NonConstantResourceId")
     @Override
     public void onClick(View view) {
@@ -111,11 +143,17 @@ public class PizzaActivity extends AppCompatActivity implements View.OnClickList
         }
     }
 
+    /**
+     * Open CustomizeActivity
+     */
     private void openCust(){
         Intent intent = new Intent(this, CustomizeActivity.class);
         startActivity(intent);
     }
 
+    /**
+     * addPizza method
+     */
     private void addPizza(){
         ArrayList<Topping> toppings = new ArrayList<Topping>();
         for (int i = 0; i < current.getCount(); i++)
@@ -125,6 +163,9 @@ public class PizzaActivity extends AppCompatActivity implements View.OnClickList
         curr.add(type);
     }
 
+    /**
+     * Toppings click listener
+     */
     private void toppingListener(){
         extraToppings.setOnItemClickListener((parent, view, position, id) -> {
             if(current.getCount() < 7) {
@@ -145,6 +186,10 @@ public class PizzaActivity extends AppCompatActivity implements View.OnClickList
         });
     }
 
+    /**
+     * Set toppings on pizza flavor
+     * @param flavor type
+     */
     private void setToppings(String flavor){
         ArrayList<Topping> tempextra = new ArrayList<>(Arrays.asList(Topping.values()));
         ArrayList<Topping> tempcurrent = new ArrayList<>();
@@ -185,12 +230,21 @@ public class PizzaActivity extends AppCompatActivity implements View.OnClickList
         currentToppings.setAdapter(current);
     }
 
+    /**
+     * Change color of buttons to show what is selected
+     * @param btn_focus to focus
+     * @param btn1 unfocused
+     * @param btn2 unfocused
+     */
     private void setFocus(Button btn_focus, Button btn1, Button btn2){
         btn1.setBackgroundColor(Color.rgb(187, 134, 252));
         btn2.setBackgroundColor(Color.rgb(187, 134, 252));
         btn_focus.setBackgroundColor(Color.rgb(98, 0, 238));
     }
 
+    /**
+     * Set as clickable
+     */
     private void setClickable(){
         small.setClickable(true);
         medium.setClickable(true);
