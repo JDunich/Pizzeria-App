@@ -1,22 +1,35 @@
 package com.example.pizzeria_app;
 
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-
-import static com.example.pizzeria_app.CustomizeActivity.arr;
 import static com.example.pizzeria_app.PizzaActivity.curr;
 
+/**
+ * Class for Main Activity
+ * @author Jack Dunich
+ * @author Kiana Perst
+ */
 public class MainActivity extends AppCompatActivity {
-
+    /**
+     * Store Orders for the application
+     */
     static StoreOrders storeOrders = new StoreOrders();
+    /**
+     * Buttons
+     */
     static Button curr_bt, all_bt;
-
+    /**
+     * Button
+     */
     Button order_bt;
 
+    /**
+     * Initialization
+     * @param savedInstanceState savedInstanceState
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -59,16 +72,25 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+    /**
+     * Opener
+     */
     private void openActivity(){
         Intent intent = new Intent(this, PizzaActivity.class);
         startActivity(intent);
     }
 
+    /**
+     * Opener
+     */
     private void openOrder(){
         Intent intent = new Intent(this, CurrentActivity.class);
         startActivity(intent);
     }
 
+    /**
+     * Opener
+     */
     private void openStore(){
         Intent intent = new Intent(this, StoreActivity.class);
         startActivity(intent);

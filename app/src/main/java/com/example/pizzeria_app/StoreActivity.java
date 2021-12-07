@@ -4,19 +4,40 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.*;
 import androidx.appcompat.app.AppCompatActivity;
-
 import java.util.ArrayList;
-
 import static com.example.pizzeria_app.MainActivity.storeOrders;
 
+/**
+ * Class for Deluxe child
+ * @author Jack Dunich
+ * @author Kiana Perst
+ */
 public class StoreActivity extends AppCompatActivity {
-
+    /**
+     * ArrayAdapter
+     */
     ArrayAdapter<String> numberAdapter;
+    /**
+     * Orders
+     */
     ListView ordersTable;
+    /**
+     * Numbers
+     */
     Spinner numbers;
+    /**
+     * Order Total
+     */
     EditText orderTotal;
+    /**
+     * Cancel Button
+     */
     Button cancel;
 
+    /**
+     * Initialization
+     * @param savedInstanceState savedInstanceState
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -50,6 +71,10 @@ public class StoreActivity extends AppCompatActivity {
 
     }
 
+    /**
+     * Set Table
+     * @param order
+     */
     public void setTable(Order order){
         ArrayAdapter<Pizza> adapter = new ArrayAdapter<Pizza>(
                 this,
@@ -59,6 +84,9 @@ public class StoreActivity extends AppCompatActivity {
         orderTotal.setText(String.format("%,.2f", order.getFinalTotal()));
     }
 
+    /**
+     * Set Phone Number
+     */
     public void setPhoneNumbers(){
         ArrayList<String> formattedNumbers = new ArrayList<>();
         for(Order item : storeOrders.getOrdersList())
@@ -71,6 +99,11 @@ public class StoreActivity extends AppCompatActivity {
         numbers.setAdapter(numberAdapter);
     }
 
+    /**
+     * Format Number
+     * @param number phone number
+     * @return String
+     */
     private String formatNumber(String number){
         return number.replaceFirst("(\\d{3})(\\d{3})(\\d+)", "($1) $2-$3");
     }
