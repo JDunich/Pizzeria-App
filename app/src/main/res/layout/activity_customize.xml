@@ -17,32 +17,44 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.15" />
+
     <EditText
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:inputType="textPersonName"
-            android:text="@string/phone"
-            android:ems="10"
-            android:id="@+id/phone"
-            app:layout_constraintTop_toBottomOf="@+id/total_pizza"
-            app:layout_constraintStart_toStartOf="@+id/total_pizza"
-            app:layout_constraintEnd_toEndOf="@+id/total_pizza" android:layout_marginTop="68dp"
-            app:layout_constraintHorizontal_bias="0.0" tools:ignore="TextFields"/>
+        android:id="@+id/phone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="152dp"
+        android:ems="10"
+        android:hint="@string/phone"
+        android:inputType="textPersonName"
+        android:minHeight="48dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Title3" />
+
     <Button
-            android:text="@string/finalize"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" android:id="@+id/finalize"
-            app:layout_constraintTop_toBottomOf="@+id/phone" app:layout_constraintStart_toStartOf="@+id/phone"
-            app:layout_constraintEnd_toEndOf="@+id/phone" android:layout_marginTop="88dp"
-            android:clickable="false" android:focusable="true"/>
+        android:id="@+id/finalize"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="false"
+        android:text="@string/finalize"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/phone" />
+
     <EditText
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:inputType="textPersonName"
-            android:text="@string/total_pizza"
-            android:ems="10"
-            android:id="@+id/total_pizza"
-            app:layout_constraintTop_toTopOf="parent" app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent" android:layout_marginTop="116dp"/>
+        android:id="@+id/total_pizza"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="220dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:minHeight="48dp"
+        android:text="@string/total_pizza"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
