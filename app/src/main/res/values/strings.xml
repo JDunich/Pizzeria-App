@@ -24,7 +24,7 @@
     <string name="add">Add</string>
     <string name="next">Next</string>
     <string name="phone">Name</string>
-    <string name="finalize">Finalize</string>
+    <string name="finalize">Place Order</string>
     <string name="total_pizza">Name</string>
     <string-array name="Size">
         <item>Small</item>
